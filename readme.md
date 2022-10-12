@@ -7,3 +7,10 @@
 ## 文件说明
 
 cqkm.dict.yaml  核心码表
+
+
+可以参考这个文件来改
+https://github.com/wongdean/rime-settings/blob/master/double_pinyin.schema.yaml
+
+定制方式：
+https://github.com/rime/home/wiki/CustomizationGuide
