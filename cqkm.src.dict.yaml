@@ -19,7 +19,7 @@ encoder:
       formula: "AaBaCaZa"
 import_tables:
   - cqkm        #主码表
-  - zc
+  - asuka
 #  - ipinyin     #反查副码表
 #  - A           #示例A副码表
 #  - B           #示例B副码表

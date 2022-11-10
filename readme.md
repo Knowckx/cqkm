@@ -9,8 +9,11 @@ rime版本的两笔输入法(超强快码)的配置
 ## 文件说明
 
 cqkm.dict.yaml  核心码表
+asuka.dict.yaml 用户词
 
 
+
+2022-11-10 11:39:
 可以参考这个文件来改
 https://github.com/wongdean/rime-settings/blob/master/double_pinyin.schema.yaml
 
