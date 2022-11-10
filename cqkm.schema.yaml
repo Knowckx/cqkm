@@ -70,8 +70,6 @@ engine:
     - lua_translator@time_translator
     - "table_translator@fixed"
     - "table_translator@mkst" #精准造词
-    # - "lua_translator@helper"
-    # - "lua_translator@time_date" # @lua函数名 即用户文件夹内 rime.lua 中函数名，参数为(key, env)
     - table_translator@veng #分号临时英文
     - history_translator@historyz #重复上次输入
     - table_translator@i+
