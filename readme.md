@@ -14,3 +14,11 @@ https://github.com/wongdean/rime-settings/blob/master/double_pinyin.schema.yaml
 
 定制方式：
 https://github.com/rime/home/wiki/CustomizationGuide
+
+
+## init
+找到路径 /Users/i544887/Library/Rime/
+git clone
+然后把src的内容全部set到rime文件夹下
+
+
