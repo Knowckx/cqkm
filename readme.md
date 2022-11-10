@@ -17,8 +17,8 @@ https://github.com/rime/home/wiki/CustomizationGuide
 
 
 ## init
-找到路径 /Users/i544887/Library/Rime/
-git clone
-然后把src的内容全部set到rime文件夹下
+- 找到Rime的路径 /Users/i544887/Library/Rime/
+- 备份一下 mv Rime Rime-bak
+- git clone https://github.com/Knowckx/rime-cqkm.git Rime
 
 
