@@ -22,3 +22,8 @@ https://github.com/rime/home/wiki/CustomizationGuide
 - git clone https://github.com/Knowckx/rime-cqkm.git Rime
 
 
+## 习惯
+部署的快捷键 control + opition + ~
+
+# 改动
+移除了 va到vz的符号编码, v键想加什么内容在cqkm.dict.yaml里搜索vaa,自己加
