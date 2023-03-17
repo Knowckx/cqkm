@@ -5,8 +5,8 @@ full_shape:
   ' ' : { commit: '　' }
   ',' : { commit: ， }
   '.' : { commit: 。 }
-  '<' : [ < ]
-  '>' : [ > ]
+  '<' : <
+  # '>' : >
   '/' : [ ／, ÷ ]
   '?' : { commit: ？ }
   ';' : { commit: ； }
@@ -39,8 +39,8 @@ full_shape:
 half_shape:
   ',' : { commit: ， }
   '.' : { commit: 。 }
-  '<' : [ < ]
-  '>' : [ > ]
+  '<' : <
+  # '>' : >
   '/' : [ 、, '/', ／, ÷ ]
   '?' : { commit: ？ }
   ';' : { commit: ； }
