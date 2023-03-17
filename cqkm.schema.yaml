@@ -215,12 +215,11 @@ key_binder:
 punctuator:
   import_preset: symbols #symbols 使用rime自带符号文件|default 不使用
   full_shape:
-    "/" : "、"
+    # "/" : "、"
     "=" : "="
   half_shape:
-    "/" : "、"
+    # "/" : "、"
     "=" : "="
-
 ascii_composer:
   switch_key:
     Control_L: noop # noop 无 |clear 字符被清除，转英文输入
