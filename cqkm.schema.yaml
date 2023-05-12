@@ -224,7 +224,7 @@ ascii_composer:
   switch_key:
     Control_L: noop # noop 无 |clear 字符被清除，转英文输入
     Control_R: noop # noop 无 |commit_text 输入一段编码字符后汉字上屏，转英文输入
-    Shift_L: commit_code # 编码直接上屏，转英文输入
+    Shift_L: inline_ascii # 也可以是 commit_code 表示编码直接上屏，转英文输入
     Shift_R: inline_ascii # 编码不上屏，转英文输入，Enter上屏，之后还是中文输入
     Caps_Lock: clear
     Eisu_toggle: clear
