@@ -17159,7 +17159,8 @@ columns:
 抵消	duxs	1
 打消	duxse	1
 打下手	duxsi	1
-癫痫	duxu	1
+打新	duxu	1
+癫痫	duxue	1
 掇	duxx	1	duxx
 度	duxxe	1	duxx
 打雪仗	duxz	1
@@ -85021,6 +85022,7 @@ columns:
 上厕所	sfcs	1
 上船	sfct	1
 上次	sfcu	1
+上床	sfcue	1
 松弛	sfcv	1
 上层	sfcve	1
 司法程序	sfcx	1
@@ -102717,7 +102719,8 @@ columns:
 血淋淋	xqlle	1
 小巧玲珑	xqlli	1
 贤妻良母	xqlm	1
-向量	xqln	1
+血量	xqln	1
+向量	xqlne	1
 血泪	xqls	1
 血泪史	xqlse	1
 小青龙汤	xqlt	1
@@ -112587,6 +112590,7 @@ columns:
 战狼	zfle	1
 栅栏	zflf	1
 占领	zflh	1
+战列	zflhe	1
 梽	zfli	1	zfli
 占理	zflj	1
 株连	zflk	1
