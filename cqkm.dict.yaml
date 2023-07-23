@@ -11498,7 +11498,8 @@ columns:
 撑不住	cubz	1
 抽查	cucf	1
 插槽	cucfe	1
-摧残	cuch	1
+持仓	cuch	1
+摧残	cuche	1
 措词	cuci	1
 擦车	cuck	1
 操场	cucl	1
@@ -23462,7 +23463,6 @@ columns:
 馆子	gezn	1
 各自	gezq	1
 各种	gezr	1
-各种人	gezre	1
 各族	gezu	1
 够着	gezy	1
 根	gf	1	gfvi
@@ -27989,6 +27989,7 @@ columns:
 回答完	hddw	1
 很多东西	hddx	1
 黑道	hddy	1
+回调	hddi	1
 囫	hde	1	hdee
 患儿	hdee	1
 夥	hdeee	1	hdee
@@ -92223,8 +92224,7 @@ columns:
 体量	thlne	1
 套牢	thlo	1
 偷懒	thloe	1
-太乱	thlr	1
-套利	thlre	1
+套利	thlr	1
 偷漏	thls	1
 太冷	thlu	1
 贪恋	thlue	1
@@ -109414,8 +109414,8 @@ columns:
 沅	ysjee	1	ysje
 玉石俱焚	ysjf	1
 演讲稿	ysjg	1
-油价	ysjh	1
-溢价	ysjhe	1
+溢价	ysjh	1
+油价	ysjhe	1
 演讲	ysji	1
 沿街	ysjie	1
 与时俱进	ysjj	1
@@ -114354,7 +114354,8 @@ columns:
 掌中	zkzde	1
 转折点	zkzdi	1
 转战	zkzf	1
-暂住	zkzh	1
+转债	zkzh	1
+暂住	zkzhe	1
 转诊	zkzi	1
 辗转	zkzk	1
 再苦再累	zkzl	1
@@ -116928,8 +116929,7 @@ columns:
 择机	zujfe	1
 装机	zujfi	1
 座机	zujfo	1
-这件	zujh	1
-折价	zujhe	1
+折价	zujh	1
 招集	zujhi	1
 准假	zujho	1
 瘈	zujhu	1	zujh
