@@ -19,13 +19,29 @@ encoder:
       formula: "AaBaCaZa"
 import_tables:
   - cqkm        #主码表
-  - asuka
 #  - ipinyin     #反查副码表
 #  - A           #示例A副码表
 #  - B           #示例B副码表
 #  - C           #示例C副码表
 #注:申明副码表后却无文件会卡死
 ...
+希尔顿	xwed
+湖州	hszyi
+协程	xmcrd
+数组	syzce
+遍历	bilhd
+年化	nrhhd
+御姐	yijbe
+knowckx@foxmail.com	vemail2
+eniru2016@gmail.com	vemail3
+knowckx@163.com	vemail4
+
+
+
+
+
+
+# 下面自带的说明
 #【1】本文件为超强快码 Rime 平台用户词库，下称「源词库」
 #【2】源词库意义：意使跨平台 Rime 输入法引擎用有且仅有一个的用户词库打通 Win/Linux/Android/Ios/Mac 等主流手机和PC端；不对初始词库做修改就并存用户自加词,实现用户词库与原词库1+1=1的效果，一份用户码表走天下。
 #【3】本方案的初始码表实为源词库的下属扩展词库，初始码表名为：cqkm.dict.yaml。初始码表与此码表后缀可视为“.dict.yaml”，由utf-8文本格式直接更改后缀而成。
@@ -82,17 +98,4 @@ import_tables:
 #如上述皆无法满足需求，必然是属于真正的diy用户，根本无需源词库只保留自己经常改动的初始码表即可。
 
 #数据无价，注意保存备份，可以定期保存，程序升级前，可以先取出，再覆盖回去
-
-
-日期	date
-可以    kmyx
-复用    frye
-显式    xnsk
-隐式    ynsk
-赋能    fdnx
-一起    ykql
-数组    syzc
-行      hij
-行存    hich
-解耦    jeoj
 

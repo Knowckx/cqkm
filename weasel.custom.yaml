@@ -1,0 +1,11 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3_dev_0.8
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Tue Mar 21 09:26:54 2023"
+  rime_version: 1.8.5
+patch:
+  "style/color_scheme": flypy
+  "style/font_face": "cqkmcf"
+  "style/horizontal": false #候选横排。若打开此项建议同时打开下面一项
+  "style/inline_preedit": false #嵌入编码
