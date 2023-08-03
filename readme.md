@@ -21,8 +21,9 @@ https://github.com/wongdean/rime-settings/blob/master/double_pinyin.schema.yaml
 https://github.com/rime/home/wiki/CustomizationGuide
 
 
-先搞定皮肤问题
+### 皮肤问题
 "style/color_scheme": flypy  这里改配置
+或者在右键菜单-输入法设定里改。那边可以看到预览。
 
 symbols.yaml  标点符号
 
