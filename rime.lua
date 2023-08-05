@@ -296,8 +296,9 @@ function time_translator(input, seg)
 	local keyword = rv_var["time_var"]
 	if (input == keyword) then
 		local times = {
-			os.date("%H:%M:%S")
-			,os.date("%Y-%m-%d %H:%M:%S")
+			os.date("%Y-%m-%d %H:%M:%S")
+            ,os.date("%Y-%m-%d")
+			,os.date("%H:%M:%S")
 			}
 		for i =1,#times do
 			yield(Candidate(keyword, seg.start, seg._end, times[i], "〔时间〕"))
