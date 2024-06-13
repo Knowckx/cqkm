@@ -63595,7 +63595,8 @@ columns:
 练唱	lccg	1
 练成	lcch	1
 绿春	lccj	1
-缆车	lcck	1
+练车	lcck	1
+缆车	lccke	1
 绿城	lccl	1
 练出	lccn	1
 理财产品	lccp	1
@@ -95594,8 +95595,6 @@ columns:
 ｝	vz	1
 〔	vz	1
 〕	vz	1
-〖	vz	1
-〗	vz	1
 为	w	1	wyii
 问题	w	1
 网络	w	1
@@ -117618,7 +117617,7 @@ columns:
 抓拍	zupu	1
 抓屏	zupv	1
 装配线	zupx	1
-这瓶	zupy	1
+主炮	zupy	1
 摠	zuq	1	zuqi
 准确度	zuqd	1
 主权	zuqf	1
