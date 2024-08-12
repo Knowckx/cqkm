@@ -11,7 +11,8 @@
 - 用户新词:
 直接加在cqkm.src.dict.yaml的下面。很方便，名得自己再加一个文件夹。
 
-
+- 码表很有价值。
+cqkm.dict.yaml + cqkm.src.dict.yaml
 
 
 ## 文件说明
