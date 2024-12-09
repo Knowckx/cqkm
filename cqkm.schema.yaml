@@ -7,6 +7,8 @@
   description: |
     超强快码。按 i 键临时拼音或者用拼音反查编码
   dependencies:
+    - english
+
 switches:
   - name: ascii_mode
     reset: 0
@@ -55,7 +57,7 @@ engine:
     - "affix_segmentor@mkst"
     - "affix_segmentor@rvl_zhuyin"
     - affix_segmentor@radical_lookup
-    # - "affix_segmentor@veng"
+    - affix_segmentor@english
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
@@ -65,11 +67,11 @@ engine:
     - "table_translator@fixed"
     - "table_translator@mkst"
     - table_translator@radical_lookup
+    - table_translator@english
     - history_translator@history
 
     - "lua_translator@helper"
     - "lua_translator@time_date"
-    # - table_translator@veng
 
 speller:
   auto_select: true
@@ -159,17 +161,13 @@ emoji_suggestion:
   option_name: emoji_suggestion
   tips: all
   
-# veng:
-#   dictionary: english
-#   tag: veng
-#   prefix: ";"
-#   suffix: " "
-#   tips: "〔临时英文〕"
-#   enable_completion: true
-#   enable_encoder: false
-#   enable_user_dict: false
-#   enable_sentence: false
-#   initial_quality: -1
+english:
+  dictionary: english
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 0
+  prefix: ";"
+  tips: "〔临时英文〕"
   
 
 
@@ -191,7 +189,7 @@ recognizer:
     punct: "^/([0-9]0?|[A-Za-z]+)$"
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
-    # veng: "^;.*$"
+    english: "^;.*$"
     helper: '^help$'
     xxx: "^[^uv][a-z]{2}$"
     xx: "^[^uv][a-z]$"

@@ -1,6 +1,5 @@
 bak/
-build/
-luna_pinyin.userdb
+*.userdb
 opencc/
 cqkm.txt
 cqkm_cm.txt
@@ -8,3 +7,4 @@ installation.yaml
 user.yaml
 default.custom.yaml
 weasel.custom.yaml
+build/
