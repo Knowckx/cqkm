@@ -33,5 +33,17 @@ https://github.com/rime/home/wiki/CustomizationGuide
 
 
 
+# Weasel/小狼毫 → Windows
+
+
+## 重启之后报错 build\cqkm.src.prism.bin
+
+dictionary.cc:360] loading dictionary 'cqkm.src'.
+prism.cc:76] loading prism file: C:\Users\AA\AppData\Roaming\Rime\build\cqkm.src.prism.bin
+
+原因，因为你改了什么东西，导致cqkm.src.prism.bin这个文件需要重新生成一遍。
+右键图标 - 输入法设定 - 去掉超强快码
+    好像同时需要把build文件夹里的配置给删掉，不然他会觉得你没改动配置。
+
 
 
