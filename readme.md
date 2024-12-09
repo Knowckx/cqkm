@@ -8,36 +8,18 @@
     查了至少5个小时，结果原来是因为build下面有几个bin, 这些是两笔的官方版本带过来的。
     拆字的提示 来自 spelling.reverse.bin
 
-我在考虑哦，直接用官方两笔那个版本，
-    他的两笔直接装好。然后我们只替换自己的词库，不搞别的
-假如还是用我们的方案的话
-    我把那些.bin文件放到build2里去了
-
-
-## 功能:英文单词的联想 实现！！
-
-
-### 两笔的官方这里有一个明显的错误配置
-ci_reverse_lookup:
-  dictionary: cqkm_cm.extended // 这里应该用cqkm
-
 ### 其他
+- 英文单词的联想 实现！！
+- 发现英语词典，拼音词典，反查顺序词典，都来自于 https://github.com/whjiang/cqeb
+- 两笔的官方有一个明显的错误配置
+    ci_reverse_lookup:
+        dictionary: cqkm_cm.extended // 这里应该用cqkm
 - 使用非重码版本 英文名字是 cqkm
-这两个字：重和垂，编码都是 crkk
-非重码版本，垂的编码是crkke  非重码版本好一点
-
-- 用户新词:
-直接加在cqkm.src.dict.yaml的下面。很方便，名得自己再加一个文件夹。
+    重码版本  重和垂，编码都是 crkk  我不喜欢
+    非重码版本，垂的编码是crkke  非重码版本好一点
 
 
 ### 配置
 定制方式：
 https://github.com/rime/home/wiki/CustomizationGuide
-
-
-
-## 英语单词表 TODO
-english.dict.yaml
-english.schema.yaml
-这两个文件我抄过来了 但是没起作用
 
