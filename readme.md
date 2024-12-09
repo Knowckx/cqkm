@@ -46,4 +46,8 @@ prism.cc:76] loading prism file: C:\Users\AA\AppData\Roaming\Rime\build\cqkm.src
     好像同时需要把build文件夹里的配置给删掉，不然他会觉得你没改动配置。
 
 
+## 英语单词表 TODO
+english.dict.yaml
+english.schema.yaml
+这两个文件我抄过来了 但是没起作用
 
