@@ -35,6 +35,12 @@ https://github.com/rime/home/wiki/CustomizationGuide
 
 # Weasel/小狼毫 → Windows
 
+- 查目前的版本
+weasel.custom.yaml 
+
+- 官方目前用的配置版本是：
+D:\Program Files (x86)\Rime\cqkm\data
+
 
 ## 重启之后报错 build\cqkm.src.prism.bin
 
