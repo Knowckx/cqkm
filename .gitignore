@@ -3,6 +3,7 @@ build/
 luna_pinyin.userdb
 opencc/
 cqkm.txt
+cqkm_cm.txt
 installation.yaml
 user.yaml
 default.custom.yaml
