@@ -1,10 +1,52 @@
+# 我想吸收的功能点：
+1.他有一个很强的反查 输入 idan
+2.他有一个笔画提示功能  dnd
+
+
+# 进度 反查的能力OK了
+
+
+
+
+# 不要有error的报错
+- 目前的报错。
+    E20241209 23:13:02.607800 10988 mapped_file.cc:78] attempt to open non-existent file 'C:\Users\AA\AppData\Roaming\Rime\build/spelling.reverse.bin'.
+    E20241209 23:14:08.396480  8896 reverse_lookup_dictionary.cc:39] Error opening reversedb 'C:\Users\AA\AppData\Roaming\Rime\build/spelling.reverse.bin'.
+
+
+
+做个决定，放弃他那个版本。
+    我不明白为什么我切个皮肤都没有效果
+    Log文件在报错。我不理解。
+    
+我你行；是否准备定你了我你我行
+
+# 反查的能力：
+
+engine:
+  filters:
+    - "reverse_lookup_filter@ci_reverse_lookup"
+
+这个ci_reverse_lookup是独立定义的
+
+ci_reverse_lookup:
+  dictionary: cqkm.extended
+  tips: "〔滤镜〕"
+  tags:
+    - rvlk2
+
+
+### 两笔的官方这里有一个明显的错误配置
+ci_reverse_lookup:
+  dictionary: cqkm_cm.extended // 这里应该用cqkm
+
 # 一些注意点
 
 - 逐码提示
 配置：
     "translator/enable_completion" 这个需要是true
 
-- 使用非重码版本
+- 使用非重码版本 英文名字是 cqkm
 这两个字：重和垂，编码都是 crkk
 非重码版本，垂的编码是crkke  非重码版本好一点
 
@@ -13,6 +55,11 @@
 
 - 码表很有价值。
 cqkm.dict.yaml + cqkm.src.dict.yaml
+
+
+
+
+
 
 
 ## 文件说明

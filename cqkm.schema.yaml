@@ -1,7 +1,4 @@
-﻿# Rime schema settings
-# encoding: utf-8
-# 要改配置请参照超强快码重码版配置的注释
-schema:
+﻿schema:
   schema_id: cqkm
   name: "超强快码"
   version: "1.0"
@@ -10,24 +7,25 @@ schema:
   description: |
     超强快码。按 i 键临时拼音或者用拼音反查编码
   dependencies:
-
 switches:
   - name: ascii_mode
     reset: 0
-    states: [ 中文, 西文 ]
-  - name: new_spelling
-    reset: 1
-    states: [ 隐, 显 ]
-  - name: new_hide_pinyin
-    reset: 1
-    states: [ 音, 哑 ]
-  - name: full_shape
-    states: [ 半角, 全角 ]
-  - name: ascii_punct
-    states: [ 。，, ．， ]
+    states: [ 中,英 ]
   - name: zh_trad
     reset: 0
     states: [ 简,繁 ]
+  - name: new_spelling
+    reset: 1
+    states: [ 隐,显 ]
+  - name: new_hide_pinyin
+    reset: 1
+    states: [ 音,哑 ]
+  - name: ascii_punct
+    reset: 0
+    states: [ 。，,．， ]
+  - name: full_shape
+    reset: 0
+    states: [ 半,全 ]
   - name: emoji_suggestion
     reset: 0
     states: ["🈚️", "🈶"]
@@ -35,9 +33,7 @@ switches:
 
 engine:
   filters:
-    - charset_filter@gb2312
     - simplifier
-    - reverse_lookup_filter@i_reverse_lookup
     - lua_filter@new_spelling@spelling
     - lua_filter@single_char
     - uniquifier
@@ -57,60 +53,77 @@ engine:
     - ascii_segmentor
     - matcher
     - "affix_segmentor@mkst"
-    - "affix_segmentor@veng"
+    - "affix_segmentor@rvl_zhuyin"
+    - affix_segmentor@radical_lookup
+    # - "affix_segmentor@veng"
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
-    - reverse_lookup_translator
+    - "table_translator@rvlk1"
     - table_translator
     - "table_translator@fixed"
     - "table_translator@mkst"
+    - table_translator@radical_lookup
+    - history_translator@history
+
     - "lua_translator@helper"
     - "lua_translator@time_date"
-    - table_translator@veng
-    - history_translator@historyz
-    - table_translator@i+
+    # - table_translator@veng
 
 speller:
+  auto_select: true
+  auto_clear: max_length
+  delimiter: "`"
   alphabet: 'abcdefghijklmnopqrstuvwxyz'
   initials: 'abcdefghijklmnopqrstuvwxyz'
-  delimiter: "`"
-  auto_clear: max_length
-  auto_select: true 
  # max_code_length: 5
  # auto_select_pattern: "(^[uv].$)|^.{5}$|^.{4}$"
 
 translator:
-  dictionary: cqkm.src
-  initial_quality: 0
+  dictionary: cqkm.extended
+  db_class: tabledb
+  initial_quality: 100000
   enable_charset_filter: false
-  enable_encoder: false
-  enable_completion: true
   enable_sentence: false
+  enable_encoder: false  # 开启自动造词
   encode_commit_history: false
-  enable_user_dict: false
   max_phrase_length: 4
+  enable_completion: true # 提前显示尚未输入完整码的字
+  enable_user_dict: false
   disable_user_dict_for_patterns:
     - "^[ivu].*$"
     - "^.*$"
-  preedit_format:
+  preedit_format:  # 上屏码自定义
     - xform/^i(.*)/$1/
     - xform/^v/z/
   comment_format:
     - xform/~/ /
-
-fixed: 
-  __include: /translator
-  initial_quality: -1000
-  enable_completion: false
-  enable_encoder: true
-  enable_user_dict: true
+fixed:
   db_class: tabledb
+  dictionary: cqkm.extended
   disable_user_dict_for_patterns:
     - "^.{1,3}$"
+  enable_charset_filter: false
+  enable_completion: false
+  enable_encoder: true
+  enable_sentence: false
+  enable_user_dict: true
+  encode_commit_history: false
+  initial_quality: 1000
+  max_phrase_length: 4
+# fixed: 
+#   __include: /translator
+#   initial_quality: -1000
+#   enable_completion: false
+#   enable_encoder: true
+#   enable_user_dict: true
+#   db_class: tabledb
+#   disable_user_dict_for_patterns:
+#     - "^.{1,3}$"
 
+# 精准造词
 mkst:
   __include: /translator
   enable_sentence: true
@@ -118,77 +131,77 @@ mkst:
   tips: "〔精准造词〕"
   tag: mkst
 
-lua_reverse_db:
-  spelling: spelling
-  code: spelling
 
-simplifier:
-  opencc_config: s2t.json
-  option_name: zh_trad
+# 部件拆字反查
+radical_lookup:
+  tag: radical_lookup
+  dictionary: ipinyin
+  enable_completion: true
+  enable_encoder: false
+  enable_user_dict: false
+  prefix: "i"  # 与 recognizer/patterns/radical_lookup 匹配
+  tips: "  〔反查〕"
+  comment_format:
+    - erase/^.*$//
+
+# 部件拆字滤镜
+radical_reverse_lookup:
+  tags: [ radical_lookup ]
+  # dictionary 为拼音标注来源，目前是显示本方案词库的注音。
+  # 可去部件拆字方案下载更全的、带声调的、已编译好的词典： https://github.com/mirtlecn/rime-radical-pinyin#反查带声调注音
+  dictionary: ipinyin
+  comment_format:     # 自定义 comment，例如在左右加上括号
+   - xform/^/(/
+   - xform/$/)/
+ 
 
 emoji_suggestion:
   opencc_config: emoji.json
   option_name: emoji_suggestion
   tips: all
   
-veng:
-  dictionary: english
-  tag: veng
-  prefix: ";"
-  suffix: " "
-  tips: "〔临时英文〕"
-  enable_completion: true
-  enable_encoder: false
-  enable_user_dict: false
-  enable_sentence: false
-  initial_quality: -1
+# veng:
+#   dictionary: english
+#   tag: veng
+#   prefix: ";"
+#   suffix: " "
+#   tips: "〔临时英文〕"
+#   enable_completion: true
+#   enable_encoder: false
+#   enable_user_dict: false
+#   enable_sentence: false
+#   initial_quality: -1
   
-i+:
-  dictionary: ipinyin
-  enable_completion: true
-  enable_sentence: false
-  enable_encoder: false
-  enable_user_dict: false
-  initial_quality: -10
 
-#i_reverse_lookup:
-#  tags: [ i_reverse_lookup_pattern ]
-#  dictionary: cqkm.src
-#  overwrite_comment: true
-#  comment_format: &comment
-#    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
-#    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
-#    - xform/(^|\W)(\w{2,3})\W(\2\w+)/$1$3/
-#    - xform/(^|\W)([^uioav])\W(\2\w+)/$1$3/
-#    - xform/(\W)[ivu]\w+//
-#    - xform/(^)[ivu]\w+\W/$1/
-#    - xform/(^)[ivu]\w+$//
-#    - xform/ /\ |\ /
-#    - xform/$/\] /
-#    - xform/^/ \[/
 
-historyz:
-  input: uj
-  size: 1
-  initial_quality: 0
+
+simplifier:
+  opencc_config: s2t.json
+  option_name: zh_trad
+
+lua_reverse_db:
+  spelling: spelling
+  code: spelling
 
 recognizer:
   import_preset: default
   patterns:
-    i_reverse_lookup_pattern: "^i.[a-z]+$"
-    mkst: "^[a-z]*`[a-z`]*$"
+    radical_lookup: "^i[a-z]*$"        # 响应部件拆字的反查，触发前缀与 radical_lookup/prefix 匹配
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
-    helper: '^help$'
+    mkst: "^[a-z]*`[a-z`]*$"
     punct: "^/([0-9]0?|[A-Za-z]+)$"
+    rvlk1: "^i[a-z]*$"
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
-    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$"
-    veng: "^;.*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+    # veng: "^;.*$"
+    helper: '^help$'
     xxx: "^[^uv][a-z]{2}$"
     xx: "^[^uv][a-z]$"
 
-charset_filter:
-  option_name: gb2312
-
+history:
+  input: uj
+  size: 1
+  initial_quality: 1
 key_binder:
   import_preset: default
   bindings:
@@ -204,19 +217,17 @@ key_binder:
     - {accept: "Control+Shift+dollar", toggle: zh_trad, when: always}
     - {accept: "Control+Shift+F", toggle: zh_trad, when: always}
     - {accept: "Control+Shift+G", toggle: emoji_suggestion, when: always}
-    - {accept: "Control+Shift+H", toggle: new_spelling, when: always}
-    - {accept: "Control+Shift+J", toggle: new_hide_pinyin, when: always}
+    - {accept: "Control+Shift+H", toggle: new_spelling, when: always}  # 拆分显示与隐藏
+    - {accept: "Control+Shift+J", toggle: new_hide_pinyin, when: always} # 编码提示与隐藏
     - {accept: "Control+Shift+K", toggle: single_char, when: always}
 
 punctuator:
   import_preset: symbols #symbols 使用rime自带符号文件|default 不使用
-  full_shape:
-#    "/" : "、"
-    "=" : "="
-  half_shape:
-#    "/" : "、"
-    "=" : "="
+menu:
+  page_size: 6
 
+charset_filter:
+  option_name: gb2312
 ascii_composer:
   switch_key:
     Control_L: noop # noop 无 |clear 字符被清除，转英文输入
@@ -225,8 +236,5 @@ ascii_composer:
     Shift_R: inline_ascii # 编码不上屏，转英文输入，Enter上屏，之后还是中文输入
     Caps_Lock: clear
     Eisu_toggle: clear
-
-menu:
-  page_size: 6
 
 
