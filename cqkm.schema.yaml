@@ -54,7 +54,7 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
-    - "affix_segmentor@mkst"
+    # - "affix_segmentor@mkst"
     - affix_segmentor@radical_lookup
     - affix_segmentor@veng
     - abc_segmentor
@@ -64,7 +64,7 @@ engine:
     - punct_translator
     - table_translator
     - "table_translator@fixed"
-    - "table_translator@mkst"
+    # - "table_translator@mkst"
     - table_translator@radical_lookup
     - table_translator@veng
     - history_translator@history
@@ -116,12 +116,12 @@ fixed:
 
 
 # 精准造词
-mkst:
-  __include: /translator
-  enable_sentence: true
-  prefix: '`'
-  tips: "〔精准造词〕"
-  tag: mkst
+# mkst:
+#   __include: /translator
+#   enable_sentence: true
+#   prefix: '`'
+#   tips: "〔精准造词〕"
+#   tag: mkst
 
 
 # 部件拆字反查
@@ -179,7 +179,7 @@ recognizer:
     radical_lookup: "^i[a-z]*$"        # 响应部件拆字的反查，触发前缀与 radical_lookup/prefix 匹配
     veng: "^;.*$"
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
-    mkst: "^[a-z]*`[a-z`]*$"
+    # mkst: "^[a-z]*`[a-z`]*$"
     punct: "^/([0-9]0?|[A-Za-z]+)$"
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
